@@ -33,6 +33,7 @@ Align fair clustering labels to unfair labels using the Hungarian algorithm.
    * This module quantifies how individual features contribute to counterfactual changes.
    * For every misaligned instance, we compute the absolute counterfactual change per feature
    * These changes are then aggregated across all misaligned points to identify which features require the largest adjustments.
+
 5. Explainability Plots
     * Visualizations that highlight how features change when generating counterfactuals.
     * Uses strip plots to show the distribution of counterfactual adjustments for each feature.
@@ -42,8 +43,10 @@ Align fair clustering labels to unfair labels using the Hungarian algorithm.
 
 6. Unified Comparison Plots
    * Combined summaries comparing all fairness method
-   * NMI cost per group: One plot showing Normalized Mutual Information loss for each sensitive group across all clustering methods.
-   * Counterfactual distance per group: One plot showing average CF distances required to fix misalignments for each group.
+   * **NMI cost per group:**
+     - One plot showing Normalized Mutual Information loss for each sensitive group across all clustering methods.
+   * **Counterfactual distance per group:**
+     - One plot showing average CF distances required to fix misalignments for each group.
 These unified plots make it easy to compare Balance, Social Fairness, Fair-Lloyd, UniFair, or any additional methods in a single visualization.
 
 ## How to run
