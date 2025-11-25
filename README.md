@@ -18,10 +18,10 @@ The notebook implements a full analysis pipeline:
 Align fair clustering labels to unfair labels using the Hungarian algorithm.
 
 2. Fairness Metrics
-Total NMI cost
-Per-group NMI cost
-Total misalignment
-Per-group misalignment
+Total NMI cost,
+Per-group NMI cost,
+Total misalignment,
+Per-group misalignment,
 
 3. Counterfactual Generation
 For each misaligned point:
