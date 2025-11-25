@@ -1,14 +1,14 @@
 # Balance vs Socially Fair k-means
 >This repository provides a unified Python pipeline for generating counterfactual explanations and fairness metrics for clustering results obtained from two fairness-aware clustering algorithms:
 
-  Balance Method
-  https://github.com/nicolasjulioflores/fair_algorithms_for_clustering
+  >Balance Method
+  >https://github.com/nicolasjulioflores/fair_algorithms_for_clustering
 
-  Socially Fair k-means (Fair-Lloyd)
-  https://github.com/samirasamadi/SociallyFairKMeans
+  >Socially Fair k-means (Fair-Lloyd)
+  >https://github.com/samirasamadi/SociallyFairKMeans
 
-  This repository does not implement these algorithms.
-  It consumes their outputs to compute alignment, NMI cost, misalignment, counterfactual distances, feature contributions, and explainability plots.
+  >This repository does not implement these algorithms.
+  >It consumes their outputs to compute alignment, NMI cost, misalignment, counterfactual distances, feature contributions, and explainability plots.
 
 ## Functionality Overview
 
