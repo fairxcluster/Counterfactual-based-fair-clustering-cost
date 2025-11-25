@@ -1,5 +1,5 @@
 # Balance vs Socially Fair k-means
-This repository provides a unified Python pipeline for generating counterfactual explanations and fairness metrics for clustering results obtained from two fairness-aware clustering algorithms:
+>This repository provides a unified Python pipeline for generating counterfactual explanations and fairness metrics for clustering results obtained from two fairness-aware clustering algorithms:
 
 Balance Method
 https://github.com/nicolasjulioflores/fair_algorithms_for_clustering
