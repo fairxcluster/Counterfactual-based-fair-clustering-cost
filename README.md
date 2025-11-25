@@ -10,9 +10,41 @@ https://github.com/samirasamadi/SociallyFairKMeans
 This repository does not implement these algorithms.
 It consumes their outputs to compute alignment, NMI cost, misalignment, counterfactual distances, feature contributions, and explainability plots.
 
+## Functionality Overview
+
+The notebook implements a full analysis pipeline:
+
+1. Label Alignment
+Align fair clustering labels to unfair labels using the Hungarian algorithm.
+
+2. Fairness Metrics
+Total NMI cost
+Per-group NMI cost
+Total misalignment
+Per-group misalignment
+
+3. Counterfactual Generation
+For each misaligned point:
+Compute minimal feature change to switch to the aligned fair cluster
+Distance to separating hyperplane
+Store CF pairs (factual, CF) per method, per group, per seed, per k
+
+4. Feature Contribution Analysis
+Compute absolute change per feature
+Aggregate across misaligned points
+Bar plots of average contribution
+
+5. Explainability Plots
+Strip plots showing CF change per feature
+Colored by factual feature values
+Created separately for Balance and Social-Fair
+Generated per sensitive group
+
+6. Unified Comparison Plots
+NMI cost per group (all methods in one plot)
+Counterfactual distance per group (all methods in one plot)
 
 ## How to run
-
 1. Run the Balance method repository and generate:
     output/
     unfair_centers_<dataset>/
@@ -20,6 +52,11 @@ It consumes their outputs to compute alignment, NMI cost, misalignment, counterf
 
 2. Run SociallyFairKMeans (MATLAB) and generate:
     cost_seeds/full_results_seed_*_k_*.mat
+3. Open the notebook:
+    fair_counterfactuals.ipynb
+4. Set the dataset:
+   DATASET_NAME = "adult"
+5. Run all cells.
 # Soft Fair Clustering Framework
 
 This repository provides a research framework for **soft fair clustering** in tabular data.  It implements a full pipeline that balances protected subgroups, applies Gaussian Mixture Models (GMMs) with fairlet decompositions, aligns clusters across fair and unfair models, and quantifies fairness through misalignment, NMI costs, and counterfactual distances.
