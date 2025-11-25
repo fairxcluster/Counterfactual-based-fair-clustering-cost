@@ -18,21 +18,21 @@ The notebook implements a full analysis pipeline:
 Align fair clustering labels to unfair labels using the Hungarian algorithm.
 
 2. Fairness Metrics
-Total NMI cost,
-Per-group NMI cost,
-Total misalignment,
-Per-group misalignment,
+   * Total NMI cost
+   * Per-group NMI cost
+   * Total misalignment
+   * Per-group misalignment
 
-3. Counterfactual Generation
-For each misaligned point:
-Compute minimal feature change to switch to the aligned fair cluster
-Distance to separating hyperplane
-Store CF pairs (factual, CF) per method, per group, per seed, per k
+3. For every misaligned instance, we generate a counterfactual (CF) that minimally alters the factual point so that it transitions into its aligned fair cluster.
+   This involves:
+    * Determining the smallest feature change required for the instance to switch clusters under the fair model.
+    * Measuring the distance of the counterfactual to the separating hyperplane (or decision boundary) to quantify how “close” the change is.
+    * Storing factual–counterfactual pairs for every method, distance group, seed, and value of k, enabling systematic comparison across clustering and fairness settings.
 
 4. Feature Contribution Analysis
-Compute absolute change per feature
-Aggregate across misaligned points
-Bar plots of average contribution
+Compute absolute change per feature,
+Aggregate across misaligned points,
+Bar plots of average contribution,
 
 5. Explainability Plots
 Strip plots showing CF change per feature
