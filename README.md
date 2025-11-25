@@ -30,19 +30,21 @@ Align fair clustering labels to unfair labels using the Hungarian algorithm.
     * Storing factual–counterfactual pairs for every method, distance group, seed, and value of k, enabling systematic comparison across clustering and fairness settings.
 
 4. Feature Contribution Analysis
-Compute absolute change per feature,
-Aggregate across misaligned points,
-Bar plots of average contribution,
-
+   * This module quantifies how individual features contribute to counterfactual changes.
+   * For every misaligned instance, we compute the absolute counterfactual change per feature
+   * These changes are then aggregated across all misaligned points to identify which features require the largest adjustments.
 5. Explainability Plots
-Strip plots showing CF change per feature
-Colored by factual feature values
-Created separately for Balance and Social-Fair
-Generated per sensitive group
+    * Visualizations that highlight how features change when generating counterfactuals.
+    * Uses strip plots to show the distribution of counterfactual adjustments for each feature.
+    * Each point represents a misaligned instance; color encodes the original factual feature value.
+    * Plots are generated separately for Balance Fairness and Social Fairness, enabling comparison.
+    * Outputs are also produced per sensitive group (e.g., male/female), showing fairness behavior across subpopulations.
 
 6. Unified Comparison Plots
-NMI cost per group (all methods in one plot)
-Counterfactual distance per group (all methods in one plot)
+   * Combined summaries comparing all fairness method
+   * NMI cost per group: One plot showing Normalized Mutual Information loss for each sensitive group across all clustering methods.
+   * Counterfactual distance per group: One plot showing average CF distances required to fix misalignments for each group.
+These unified plots make it easy to compare Balance, Social Fairness, Fair-Lloyd, UniFair, or any additional methods in a single visualization.
 
 ## How to run
 1. Run the Balance method repository and generate:
