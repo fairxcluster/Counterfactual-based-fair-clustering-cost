@@ -31,38 +31,38 @@ It acts as a post-processing pipeline applied after running Balance, Fair-Lloyd,
 The notebook implements a full analysis pipeline:
 
 1. Label Alignment
-  * Align fair clustering labels to unfair labels using the Hungarian algorithm.
+ * Align fair clustering labels to unfair labels using the Hungarian algorithm.
 
 2. Fairness Metrics
-   * Total NMI cost
-   * Per-group NMI cost
-   * Total misalignment
-   * Per-group misalignment
+ * Total NMI cost
+ * Per-group NMI cost
+ * Total misalignment
+ * Per-group misalignment
 
 3. For every misaligned instance, we generate a counterfactual (CF) that minimally alters the factual point so that it transitions into its aligned fair cluster.
    This involves:
-    * Determining the smallest feature change required for the instance to switch clusters under the fair model.
-    * Measuring the distance of the counterfactual to the separating hyperplane (or decision boundary) to quantify how “close” the change is.
-    * Storing factual–counterfactual pairs for every method, distance group, seed, and value of k, enabling systematic comparison across clustering and fairness settings.
+ * Determining the smallest feature change required for the instance to switch clusters under the fair model.
+ * Measuring the distance of the counterfactual to the separating hyperplane (or decision boundary) to quantify how “close” the change is.
+ * Storing factual–counterfactual pairs for every method, distance group, seed, and value of k, enabling systematic comparison across clustering and fairness settings.
 
 4. Feature Contribution Analysis
-   * This module quantifies how individual features contribute to counterfactual changes.
-   * For every misaligned instance, we compute the absolute counterfactual change per feature
-   * These changes are then aggregated across all misaligned points to identify which features require the largest adjustments.
+ * This module quantifies how individual features contribute to counterfactual changes.
+ * For every misaligned instance, we compute the absolute counterfactual change per feature
+ * These changes are then aggregated across all misaligned points to identify which features require the largest adjustments.
 
 5. Explainability Plots
-    * Visualizations that highlight how features change when generating counterfactuals.
-    * Uses strip plots to show the distribution of counterfactual adjustments for each feature.
-    * Each point represents a misaligned instance; color encodes the original factual feature value.
-    * Plots are generated separately for Balance Fairness and Social Fairness, enabling comparison.
-    * Outputs are also produced per sensitive group (e.g., male/female), showing fairness behavior across subpopulations.
+ * Visualizations that highlight how features change when generating counterfactuals.
+ * Uses strip plots to show the distribution of counterfactual adjustments for each feature.
+ * Each point represents a misaligned instance; color encodes the original factual feature value.
+ * Plots are generated separately for Balance Fairness and Social Fairness, enabling comparison.
+ * Outputs are also produced per sensitive group (e.g., male/female), showing fairness behavior across subpopulations.
 
 6. Unified Comparison Plots
-   * Combined summaries comparing all fairness method
-   * **NMI cost per group:**
-     - One plot showing Normalized Mutual Information loss for each sensitive group across all clustering methods.
-   * **Counterfactual distance per group:**
-     - One plot showing average CF distances required to fix misalignments for each group.
+ * Combined summaries comparing all fairness method
+ * **NMI cost per group:**
+  - One plot showing Normalized Mutual Information loss for each sensitive group across all clustering methods.
+ * **Counterfactual distance per group:**
+  - One plot showing average CF distances required to fix misalignments for each group.
 These unified plots make it easy to compare Balance, Social Fairness, Fair-Lloyd, UniFair, or any additional methods in a single visualization.
 
 ## How to run
@@ -79,7 +79,7 @@ These unified plots make it easy to compare Balance, Social Fairness, Fair-Lloyd
     ```bash
     fair_counterfactuals.ipynb
 4. Set the dataset:
-  ```bash
+   ```bash
    DATASET_NAME = "adult"
 
 5. Run all cells.
