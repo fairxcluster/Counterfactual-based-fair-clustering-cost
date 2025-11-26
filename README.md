@@ -81,6 +81,7 @@ These unified plots make it easy to compare Balance, Social Fairness, Fair-Lloyd
 4. Set the dataset:
   ```bash
    DATASET_NAME = "adult"
+
 5. Run all cells.
 
 # Soft Fair Clustering Framework
