@@ -1,15 +1,31 @@
 # Balance vs Socially Fair k-means
-This repository provides a unified Python pipeline for generating counterfactual explanations and fairness metrics for clustering results obtained from two fairness-aware clustering algorithms:
 
-Balance Method
+This repository provides a unified Python pipeline for evaluating fairness in clustering and generating counterfactual explanations using the outputs of multiple fair clustering algorithms.
+
+The repository does not implement these clustering algorithms.Instead, it consumes their outputs and produces:
+
+-Label alignment (Hungarian matching)
+-Group-based fairness metrics
+-Misalignment and NMI cost analysis
+-Counterfactual explanations for misaligned points
+-Feature-level contribution analysis
+-Explainability strip plots
+-Unified comparison plots across fairness methods
+
+This pipeline works with the outputs of the following algorithms:
+
+**Balance Method**
 https://github.com/nicolasjulioflores/fair_algorithms_for_clustering
 
-Socially Fair k-means (Fair-Lloyd)
+**Socially Fair k-means (Fair-Lloyd)**
 https://github.com/samirasamadi/SociallyFairKMeans
 
-This repository does not implement these algorithms.
-It consumes their outputs to compute alignment, NMI cost, misalignment, counterfactual distances, feature contributions, and explainability plots.
+**Fair-Soft-Clustering**
+This framework also supports outputs from soft fair clustering (GMM + fairlets) as introduced in:
+https://github.com/RuneDK93/fair-soft-clustering
 
+This repository is an analysis & explainability toolkit for fair clustering.
+It acts as a post-processing pipeline applied after running Balance, Fair-Lloyd, UniFair, or Soft-Balance/GMM.
 ## Functionality Overview
 
 The notebook implements a full analysis pipeline:
@@ -62,14 +78,8 @@ These unified plots make it easy to compare Balance, Social Fairness, Fair-Lloyd
 4. Set the dataset:
    DATASET_NAME = "adult"
 5. Run all cells.
+
 # Soft Fair Clustering Framework
-
-This repository provides a research framework for **soft fair clustering** in tabular data.  It implements a full pipeline that balances protected subgroups, applies Gaussian Mixture Models (GMMs) with fairlet decompositions, aligns clusters across fair and unfair models, and quantifies fairness through misalignment, NMI costs, and counterfactual distances.
-
-## Overview
-
-> **Important note on the GMM framework**: This code builds directly upon the *Gaussian mixture model (GMM) fairlet decomposition* introduced in the paper *“Fair Soft Clustering”* by Rune D. Kjærsgaard **et al.** (AISTATS 2024).  The accompanying implementation, available at [`RuneDK93/fair-soft-clustering`](https://github.com/RuneDK93/fair-soft-clustering), provides the core algorithms for fairlet-based GMM clustering.  Our framework adapts and extends this GMM fairlet decomposition for the soft fairness experiments described below.  See the *Background and Credits* section for details and citation information.
-
 Clustering algorithms such as k‑means or Gaussian mixtures often yield cluster assignments that disproportionately disadvantage minority groups.  This framework addresses this issue via **soft fair clustering**, blending traditional clustering objectives with fairness constraints.  The pipeline features:
 
 - **Dataset registry** with preconfigured settings for several common datasets (Adult Income, Student Performance, Bank Marketing, Credit Default).  Each configuration specifies the CSV file, selected features, protected attribute, and a dataset prefix used for saved outputs.
@@ -95,7 +105,6 @@ This framework is intended for researchers exploring fairness in clustering.  It
 2. **Choose your dataset** by setting the `DATASET` variable at the top of the script to one of `adult`, `student`, `bank`, or `credit`.
 3. **Configure experiment parameters:** Adjust `K_MIN`, `K_MAX`, `SEEDS`, `COV_TYPE`, `FAIR_PQ`, and other parameters as needed.  `FAIR_PQ` sets the (\(p,q\))‑fairlet decomposition ratio; by default it is `(1, 2)`, meaning each fairlet contains one protected‑minority point for every two majority points.
 
-## Usage
 
 ### Installation
 
@@ -103,3 +112,6 @@ This framework is intended for researchers exploring fairness in clustering.  It
 2. Ensure that Python 3.8+ is installed.  Install dependencies with:
    ```bash
    pip install -r requirements.txt
+   
+### Acknowledgments
+The research project is implemented in the framework of H.F.R.I. call ``Basic research Financing (Horizontal support of all Sciences)'' under the National Recovery and Resilience Plan ``Greece 2.0'' funded by the European Union - NextGenerationEU (H.F.R.I. ProjectNumber: 15940).
