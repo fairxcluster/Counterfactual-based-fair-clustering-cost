@@ -60,9 +60,9 @@ The notebook implements a full analysis pipeline:
 6. Unified Comparison Plots
  * Combined summaries comparing all fairness method
  * **NMI cost per group:**
-  - One plot showing Normalized Mutual Information loss for each sensitive group across all clustering methods.
+     - One plot showing Normalized Mutual Information loss for each sensitive group across all clustering methods.
  * **Counterfactual distance per group:**
-  - One plot showing average CF distances required to fix misalignments for each group.
+     - One plot showing average CF distances required to fix misalignments for each group.
 These unified plots make it easy to compare Balance, Social Fairness, Fair-Lloyd, UniFair, or any additional methods in a single visualization.
 
 ## How to run
