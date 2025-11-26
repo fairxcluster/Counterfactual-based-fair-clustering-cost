@@ -72,13 +72,16 @@ These unified plots make it easy to compare Balance, Social Fairness, Fair-Lloyd
     unfair_centers_<dataset>/
     fair_centers_<dataset>/
 
-3. Run SociallyFairKMeans (MATLAB) and generate:
+2. Run SociallyFairKMeans (MATLAB) and generate:
+    ```bash
     cost_seeds/full_results_seed_*_k_*.mat
-4. Open the notebook:
+3. Open the notebook:
+    ```bash
     fair_counterfactuals.ipynb
-5. Set the dataset:
+4. Set the dataset:
+  ```bash
    DATASET_NAME = "adult"
-6. Run all cells.
+5. Run all cells.
 
 # Soft Fair Clustering Framework
 Clustering algorithms such as k‑means or Gaussian mixtures often yield cluster assignments that disproportionately disadvantage minority groups.  This framework addresses this issue via **soft fair clustering**, blending traditional clustering objectives with fairness constraints.  The pipeline features:
