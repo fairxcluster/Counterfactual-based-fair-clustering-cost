@@ -31,7 +31,7 @@ It acts as a post-processing pipeline applied after running Balance, Fair-Lloyd,
 The notebook implements a full analysis pipeline:
 
 1. Label Alignment
-*Align fair clustering labels to unfair labels using the Hungarian algorithm.
+  * Align fair clustering labels to unfair labels using the Hungarian algorithm.
 
 2. Fairness Metrics
    * Total NMI cost
@@ -68,8 +68,8 @@ These unified plots make it easy to compare Balance, Social Fairness, Fair-Lloyd
 ## How to run
 1. Run the Balance method repository and generate:
     output/
-    unfair_centers_<dataset>/
-    fair_centers_<dataset>/
+    unfair_centers_<<dataset>>/
+    fair_centers_<<dataset>>/
 
 2. Run SociallyFairKMeans (MATLAB) and generate:
     cost_seeds/full_results_seed_*_k_*.mat
