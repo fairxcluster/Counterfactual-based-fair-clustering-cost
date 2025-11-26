@@ -84,7 +84,7 @@ These unified plots make it easy to compare Balance, Social Fairness, Fair-Lloyd
 
 5. Run all cells.
 
-# Soft Fair Clustering Framework
+## Soft Fair Clustering Framework
 Clustering algorithms such as k‑means or Gaussian mixtures often yield cluster assignments that disproportionately disadvantage minority groups.  This framework addresses this issue via **soft fair clustering**, blending traditional clustering objectives with fairness constraints.  The pipeline features:
 
 - **Dataset registry** with preconfigured settings for several common datasets (Adult Income, Student Performance, Bank Marketing, Credit Default).  Each configuration specifies the CSV file, selected features, protected attribute, and a dataset prefix used for saved outputs.
