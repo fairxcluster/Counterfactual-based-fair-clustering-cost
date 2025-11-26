@@ -87,7 +87,7 @@ These unified plots make it easy to compare Balance, Social Fairness, Fair-Lloyd
 ## Soft Fair Clustering Framework
 Clustering algorithms such as k‑means or Gaussian mixtures often yield cluster assignments that disproportionately disadvantage minority groups.  This framework addresses this issue via **soft fair clustering**, blending traditional clustering objectives with fairness constraints.  The pipeline features:
 
-- **Dataset registry** with preconfigured settings for several common datasets (Adult Income, Student Performance, Bank Marketing, Credit Default).  Each configuration specifies the CSV file, selected features, protected attribute, and a dataset prefix used for saved outputs.
+- **Dataset registry** with preconfigured settings for several common datasets (Adult, Student, Bank, Credit).  Each configuration specifies the CSV file, selected features, protected attribute, and a dataset prefix used for saved outputs.
 - **Preprocessing utilities** to drop missing values, encode the protected attribute as \(\{0,1\}\), balance the dataset to a 1:2 minority/majority ratio, and scale continuous features.
 - **Fairlet decomposition** using Maximum Cardinality Fairlets (MCF) to produce fair cluster representatives before fitting a GMM.
 - **Evaluation metrics** that include traditional clustering cost, fairness balance measures, and per‑group NMI (Normalized Mutual Information) to quantify alignment between fair and unfair assignments.
