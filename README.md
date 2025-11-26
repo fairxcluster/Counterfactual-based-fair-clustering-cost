@@ -1,4 +1,4 @@
-# Balance vs Socially Fair k-means
+# Counterfactual-based-fair-clustering-cost
 
 This repository provides a unified Python pipeline for evaluating fairness in clustering and generating counterfactual explanations using the outputs of multiple fair clustering algorithms.
 
