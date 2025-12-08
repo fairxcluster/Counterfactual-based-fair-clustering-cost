@@ -117,6 +117,9 @@ This framework is intended for researchers exploring fairness in clustering.  It
 2. Ensure that Python 3.8+ is installed.  Install dependencies with:
    ```bash
    pip install -r requirements.txt
-   
+
+### Reference
+Antonia Karra, Georgios Vardakas, Evaggelia Pitoura and Aristidis Likas. "How Much Does Cluster Fairness Cost? A Counterfactual-based Approach." 5th Workshop on Bias and Fairness in AI ECML PKDD 2025, Porto.
+
 ### Acknowledgments
 The research project is implemented in the framework of H.F.R.I. call ``Basic research Financing (Horizontal support of all Sciences)'' under the National Recovery and Resilience Plan ``Greece 2.0'' funded by the European Union - NextGenerationEU (H.F.R.I. ProjectNumber: 15940).
